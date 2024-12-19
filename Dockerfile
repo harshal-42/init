@@ -1,5 +1,9 @@
 FROM debian:latest
 # Install dependencies
+RUN apt-get update -y \
+    && apt-get upgrade -y \
+    && apt-get install lsb-release -y \
+    && apt-get clean all
 RUN apt-get update && \
     apt-get install -y curl apt-transport-https gnupg && \
     curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg && \
