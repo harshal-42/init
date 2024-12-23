@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM python:3.9-slim
 # Install dependencies
 RUN apt-get update -y \
     && apt-get upgrade -y \
