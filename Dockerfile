@@ -12,7 +12,7 @@ RUN apt-get update && \
     apt-get update && apt-get install -y azure-cli
 RUN apt-get update && apt-get install -y --no-install-recommends \
     vim\
-    jq \
+    jq 
 # Add the script
 COPY fetch-config.sh /app/fetch-config.sh
 COPY fetch-config1.sh /app/fetch-config1.sh
