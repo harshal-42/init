@@ -10,6 +10,9 @@ RUN apt-get update && \
     mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg && \
     echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $(lsb_release -cs) main" > /etc/apt/sources.list.d/azure-cli.list && \
     apt-get update && apt-get install -y azure-cli
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    vim\
+    jq \
 # Add the script
 COPY fetch-config.sh /app/fetch-config.sh
 COPY fetch-config1.sh /app/fetch-config1.sh
