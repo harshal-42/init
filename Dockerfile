@@ -12,6 +12,8 @@ RUN apt-get update && \
     apt-get update && apt-get install -y azure-cli
 # Add the script
 COPY fetch-config.sh /app/fetch-config.sh
+COPY fetch-config1.sh /app/fetch-config1.sh
 RUN chmod +x /app/fetch-config.sh
+RUN chmod +x /app/fetch-config1.sh
 # Command to run the script
 CMD ["/bin/bash", "-c", "/app/fetch-config.sh"]
